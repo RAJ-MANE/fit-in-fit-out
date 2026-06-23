@@ -2947,3 +2947,181 @@ h1, h2, h3, h4, .btn {
     animation: shimmer 1.2s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
+/* --- Promotional Popup Notification --- */
+.promo-popup-wrapper {
+    position: fixed;
+    bottom: 24px;
+    left: 24px;
+    z-index: 9999;
+    max-width: 340px;
+    width: calc(100% - 48px);
+    transform: translateY(120%) scale(0.9);
+    opacity: 0;
+    pointer-events: none;
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.6s ease;
+}
+
+.promo-popup-wrapper.active {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+    pointer-events: all;
+}
+
+.promo-popup-content {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(16px) saturate(180%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+    border: 1px solid rgba(27, 67, 50, 0.1);
+    border-radius: 16px;
+    padding: 16px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Accent glassmorphism border highlight */
+.promo-popup-content::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: linear-gradient(180deg, var(--color-primary-light), var(--color-accent));
+}
+
+.promo-popup-close {
+    position: absolute;
+    top: 10px;
+    right: 12px;
+    background: none;
+    border: none;
+    font-size: 18px;
+    color: var(--color-primary-light);
+    cursor: pointer;
+    opacity: 0.5;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+    padding: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+}
+
+.promo-popup-close:hover {
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+.promo-popup-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 8px;
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+.promo-popup-dot {
+    width: 6px;
+    height: 6px;
+    background-color: #22c55e; /* Live green dot */
+    border-radius: 50%;
+    display: inline-block;
+    box-shadow: 0 0 8px #22c55e;
+    animation: pulseDot 2s infinite ease-in-out;
+}
+
+@keyframes pulseDot {
+    0%, 100% { transform: scale(1); opacity: 0.8; }
+    50% { transform: scale(1.4); opacity: 1; box-shadow: 0 0 12px #22c55e; }
+}
+
+.promo-popup-badge {
+    color: var(--color-accent);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.promo-popup-time {
+    color: #6c757d;
+    font-weight: 400;
+    margin-left: auto;
+    margin-right: 18px; /* space for close button */
+}
+
+.promo-popup-text {
+    font-family: var(--font-body);
+    font-size: 0.88rem;
+    color: var(--color-primary-dark);
+    line-height: 1.4;
+    margin-bottom: 12px;
+    padding-right: 8px;
+    font-weight: 500;
+}
+
+.promo-popup-actions {
+    display: flex;
+    gap: 8px;
+}
+
+.promo-btn {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    font-family: var(--font-body);
+    font-size: 0.82rem;
+    font-weight: 700;
+    padding: 8px 12px;
+    border-radius: 8px;
+    transition: all 0.2s ease-in-out;
+    text-decoration: none;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.promo-btn-whatsapp {
+    background-color: #25d366;
+    color: #ffffff;
+    border: 1px solid #20ba5a;
+}
+
+.promo-btn-whatsapp:hover {
+    background-color: #20ba5a;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(32, 186, 90, 0.2);
+}
+
+.promo-btn-call {
+    background-color: var(--color-primary);
+    color: #ffffff;
+    border: 1px solid var(--color-primary-dark);
+}
+
+.promo-btn-call:hover {
+    background-color: var(--color-primary-light);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(45, 106, 79, 0.2);
+}
+
+.promo-icon {
+    width: 14px;
+    height: 14px;
+}
+
+/* Mobile responsive adjustments */
+@media (max-width: 768px) {
+    .promo-popup-wrapper {
+        bottom: 100px; /* place above the floating WhatsApp CTA on mobile */
+        left: 50%;
+        transform: translateX(-50%) translateY(120%) scale(0.9);
+        width: calc(100% - 32px);
+        max-width: 360px;
+    }
+    
+    .promo-popup-wrapper.active {
+        transform: translateX(-50%) translateY(0) scale(1);
+    }
+}
+

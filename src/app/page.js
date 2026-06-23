@@ -14,6 +14,7 @@ import PodcastsSection from "@/components/PodcastsSection";
 import CtaBanner from "@/components/CtaBanner";
 import Footer from "@/components/Footer";
 import FloatingCta from "@/components/FloatingCta";
+import PromoPopup from "@/components/PromoPopup";
 import VideoModal from "@/components/VideoModal";
 
 export default function Home() {
@@ -56,6 +57,9 @@ export default function Home() {
 
       {/* Floating Conversion WhatsApp Button */}
       <FloatingCta />
+
+      {/* Periodic Consult Promo Popup */}
+      <PromoPopup />
 
       {/* Dynamic YouTube Video Modal */}
       <VideoModal videoId={selectedVideoId} onClose={handleCloseModal} />
