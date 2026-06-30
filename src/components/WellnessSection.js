@@ -30,12 +30,14 @@ export default function WellnessSection() {
             <button
               className={`tab-btn ${activeTab === "seasonal-fruits" ? "active" : ""}`}
               onClick={() => setActiveTab("seasonal-fruits")}
+              suppressHydrationWarning
             >
               Seasonal Nutrition Tips
             </button>
             <button
               className={`tab-btn ${activeTab === "hydration-guide" ? "active" : ""}`}
               onClick={() => setActiveTab("hydration-guide")}
+              suppressHydrationWarning
             >
               Summer Hydration Guide
             </button>

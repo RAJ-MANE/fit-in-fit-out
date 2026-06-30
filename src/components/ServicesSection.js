@@ -92,7 +92,7 @@ export default function ServicesSection() {
         </RevealOnScroll>
         
         {/* Animated Feature Cards Grid */}
-        <div className="mx-auto grid max-w-7xl grid-cols-1 gap-8 p-4 md:grid-cols-2 lg:grid-cols-3 justify-items-center relative z-10 mt-12">
+        <div className="mx-auto grid max-w-7xl grid-cols-2 gap-4 md:gap-8 p-2 md:p-4 lg:grid-cols-3 justify-items-center relative z-10 mt-12">
           {features.map((feature) => (
             <AnimatedFeatureCard
               key={feature.index}

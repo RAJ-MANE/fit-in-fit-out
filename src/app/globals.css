@@ -2509,13 +2509,16 @@ h1, h2, h3, h4, .btn {
 }
 
 /* Bold typography upgrades with gradients */
+@keyframes textColors {
+    0% { color: #2d6a4f; }       /* Clinical Brand Green */
+    50% { color: #b45309; }      /* Premium Warm Amber */
+    100% { color: #2d6a4f; }     /* Loop back to Green */
+}
+
 .highlight-text {
-    background: linear-gradient(135deg, var(--color-primary-light) 0%, var(--color-accent) 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    color: transparent;
+    color: #2d6a4f;
     font-weight: 800;
+    animation: textColors 15s ease-in-out infinite;
 }
 
 /* 🎬 Cinematic Intro Loader Screen */
@@ -3125,3 +3128,93 @@ h1, h2, h3, h4, .btn {
     }
 }
 
+/* ─── Awards Infinite Marquee ─── */
+.awards-marquee-section {
+    background-color: var(--color-bg-white);
+    position: relative;
+    z-index: 1;
+}
+
+@keyframes marquee {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(calc(-280px * 3 - 24px * 3)); /* size + gap of duplicate awards */
+    }
+}
+
+/* responsive adjust calculation for animation */
+@media (max-width: 768px) {
+    @keyframes marquee {
+        0% { transform: translateX(0); }
+        100% { transform: translateX(calc(-220px * 3 - 24px * 3)); }
+    }
+}
+
+.animate-marquee {
+    display: flex;
+    animation: marquee 25s linear infinite;
+    width: max-content;
+}
+
+.animate-marquee:hover {
+    animation-play-state: paused;
+}
+
+/* ─── Gallery Bento Grid ─── */
+.gallery-section {
+    background-color: var(--color-bg-warm);
+    position: relative;
+    z-index: 1;
+}
+
+/* Bento responsive adjustment */
+@media (max-width: 767px) {
+    .gallery-section .grid {
+        display: flex;
+        flex-direction: column;
+        height: auto !important;
+    }
+    .gallery-section .grid > div {
+        height: 250px !important;
+    }
+}
+
+/* ─── Events Parallax Narrative ─── */
+.events-section {
+    background-color: var(--color-bg-white);
+    position: relative;
+    z-index: 1;
+}
+
+/* responsive timeline adjust */
+@media (max-width: 768px) {
+    .events-section .flex-col {
+        gap: 20px;
+        text-align: center !important;
+    }
+    .events-section .flex-col .text-left {
+        text-align: center !important;
+        padding-left: 0 !important;
+    }
+}
+
+/* ─── Lightbox Global Animations ─── */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes scaleUp {
+    from { transform: scale(0.95); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+.animate-fade-in {
+    animation: fadeIn 0.25s ease-out forwards;
+}
+
+.animate-scale-up {
+    animation: scaleUp 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}

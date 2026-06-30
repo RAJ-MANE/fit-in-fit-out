@@ -111,6 +111,7 @@ export default function AssessmentSection() {
                     value={weight}
                     onChange={(e) => setWeight(e.target.value)}
                     required
+                    suppressHydrationWarning
                   />
                 </div>
                 <div className="form-input-group">
@@ -124,10 +125,11 @@ export default function AssessmentSection() {
                     value={height}
                     onChange={(e) => setHeight(e.target.value)}
                     required
+                    suppressHydrationWarning
                   />
                 </div>
               </div>
-              <button type="submit" className="btn btn-primary btn-block">
+              <button type="submit" className="btn btn-primary btn-block" suppressHydrationWarning>
                 Calculate My BMI
               </button>
             </form>

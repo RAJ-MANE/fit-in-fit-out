@@ -5,21 +5,26 @@ import ScrollProgress from "@/components/ScrollProgress";
 import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
 import AboutSection from "@/components/AboutSection";
+import AwardsMarquee from "@/components/AwardsMarquee";
 import ServicesSection from "@/components/ServicesSection";
 import AssessmentSection from "@/components/AssessmentSection";
 import ConsultationSection from "@/components/ConsultationSection";
 import WellnessSection from "@/components/WellnessSection";
 import WhyChooseSection from "@/components/WhyChooseSection";
+import GalleryBento from "@/components/GalleryBento";
 import PodcastsSection from "@/components/PodcastsSection";
+import EventsSection from "@/components/EventsSection";
 import CtaBanner from "@/components/CtaBanner";
 import Footer from "@/components/Footer";
 import FloatingCta from "@/components/FloatingCta";
 import PromoPopup from "@/components/PromoPopup";
 import VideoModal from "@/components/VideoModal";
+import ImageLightbox from "@/components/ImageLightbox";
 
 export default function Home() {
   const [introActive, setIntroActive] = useState(true);
   const [selectedVideoId, setSelectedVideoId] = useState(null);
+  const [previewImage, setPreviewImage] = useState(null);
 
   const handleIntroComplete = () => {
     setIntroActive(false);
@@ -45,12 +50,15 @@ export default function Home() {
       <main style={{ opacity: introActive ? 0 : 1, transition: "opacity 0.6s ease" }}>
         <HeroSection />
         <AboutSection />
+        <AwardsMarquee onPreview={setPreviewImage} />
         <ServicesSection />
         <AssessmentSection />
         <ConsultationSection />
         <WellnessSection />
         <WhyChooseSection />
+        <GalleryBento onPreview={setPreviewImage} />
         <PodcastsSection onVideoSelect={handleVideoSelect} />
+        <EventsSection />
         <CtaBanner />
         <Footer />
       </main>
@@ -63,6 +71,9 @@ export default function Home() {
 
       {/* Dynamic YouTube Video Modal */}
       <VideoModal videoId={selectedVideoId} onClose={handleCloseModal} />
+
+      {/* Global Image Preview Lightbox */}
+      <ImageLightbox image={previewImage} onClose={() => setPreviewImage(null)} />
     </>
   );
 }

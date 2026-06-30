@@ -116,6 +116,7 @@ export default function WhyChooseSection() {
                     key={index}
                     onClick={() => setActiveIndex(index)}
                     aria-label={`Go to testimonial ${index + 1}`}
+                    suppressHydrationWarning
                     style={{
                       width: "8px",
                       height: "8px",

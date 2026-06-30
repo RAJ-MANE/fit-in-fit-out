@@ -107,9 +107,8 @@ export default function Footer() {
       
       {/* Bottom copyright details */}
       <div className="footer-bottom">
-        <div className="container footer-bottom-flex">
+        <div className="container" style={{ textAlign: "center" }}>
           <p>&copy; {new Date().getFullYear()} Fit In Fit Out. All Rights Reserved. Built for Dt. Poonam Kalia.</p>
-          <p>Designed with ❤️ for Healthy Lifestyles | <a href="#hero">Back to Top ↑</a></p>
         </div>
       </div>
     </footer>

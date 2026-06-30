@@ -59,6 +59,7 @@ export default function PromoPopup() {
           className="promo-popup-close" 
           onClick={() => setActive(false)} 
           aria-label="Close notification"
+          suppressHydrationWarning
         >
           &times;
         </button>

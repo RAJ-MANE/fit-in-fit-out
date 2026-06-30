@@ -12,7 +12,7 @@ export default function Header() {
       setIsScrolled(window.scrollY > 50);
 
       // Scroll Spy Logic
-      const sections = ["hero", "about", "services", "assessment", "consultation", "wellness", "podcasts"];
+      const sections = ["hero", "about", "services", "consultation", "gallery", "podcasts"];
       const scrollPosition = window.scrollY + 120; // offset for header
 
       for (const sectionId of sections) {
@@ -56,9 +56,8 @@ export default function Header() {
     { label: "Home", target: "#hero", id: "hero" },
     { label: "About", target: "#about", id: "about" },
     { label: "Services", target: "#services", id: "services" },
-    { label: "BMI Tool", target: "#assessment", id: "assessment" },
     { label: "Consultation", target: "#consultation", id: "consultation" },
-    { label: "Guides", target: "#wellness", id: "wellness" },
+    { label: "Gallery", target: "#gallery", id: "gallery" },
     { label: "Videos", target: "#podcasts", id: "podcasts" },
   ];
 
