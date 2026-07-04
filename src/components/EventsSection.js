@@ -62,63 +62,26 @@ export default function EventsSection() {
 
 // Parallax Scroll Event Card
 function EventCard({ event, isReversed }) {
-  const containerRef = useRef(null);
-  const [offsetY, setOffsetY] = useState(0);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const element = containerRef.current;
-      if (!element) return;
-
-      const rect = element.getBoundingClientRect();
-      const windowHeight = window.innerHeight;
-      
-      // Calculate how far the element is from the center of the viewport
-      const elementCenter = rect.top + rect.height / 2;
-      const viewportCenter = windowHeight / 2;
-      const distanceFromCenter = elementCenter - viewportCenter;
-      
-      // Map the distance to a subtle parallax vertical scroll shift (max +/- 35px)
-      const maxShift = 10;
-      const shift = (distanceFromCenter / windowHeight) * -maxShift;
-      
-      setOffsetY(shift);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    handleScroll(); // run once on mount
-
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
   return (
     <div
-      ref={containerRef}
       className={`flex flex-col md:flex-row items-center gap-10 md:gap-16 ${
         isReversed ? "md:flex-row-reverse" : ""
       }`}
     >
-      {/* Left/Right Column: Image with Scroll Parallax */}
+      {/* Left/Right Column: Image */}
       <RevealOnScroll className="w-full md:w-1/2" threshold={0.2}>
         <div className="relative aspect-[4/3] w-full overflow-hidden rounded-3xl border border-neutral-200/80 bg-neutral-100 shadow-lg">
           {/* Shimmer overlay */}
           <div className="shimmer-effect" aria-hidden="true" />
           
-          <div
-            className="absolute inset-0 w-full h-[106%] transition-transform duration-100 ease-out"
-            style={{
-              transform: `translateY(${offsetY}px)`,
-              top: "-3%"
-            }}
-          >
-            <Image
-              src={event.src}
-              alt={event.alt}
-              fill
-              sizes="(max-width: 768px) 100vw, 50vw"
-              className="object-cover"
-            />
-          </div>
+          <Image
+            src={event.src}
+            alt={event.alt}
+            fill
+            sizes="(max-width: 768px) 100vw, 50vw"
+            className="object-cover"
+            priority
+          />
         </div>
       </RevealOnScroll>
 
