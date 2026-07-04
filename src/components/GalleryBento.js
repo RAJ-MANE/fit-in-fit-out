@@ -7,8 +7,7 @@ export default function GalleryBento({ onPreview }) {
   const photos = [
     { id: 1, src: "/gallery1.jpeg", alt: "Healthy Meal Preparation Consultation", title: "Personalized Counseling", desc: "Coaching clients on sustainable wellness.", sizeClass: "md:col-span-2 md:row-span-2" },
     { id: 2, src: "/gallery2.jpeg", alt: "Clinical Dietitian at work", title: "Clinical Assessments", desc: "Scientific analysis of body composition.", sizeClass: "md:col-span-2 md:row-span-1" },
-    { id: 3, src: "/gallery3.jpeg", alt: "Dt. Poonam Kalia discussing health", title: "Community Education", desc: "Promoting nutrition values locally.", sizeClass: "md:col-span-1 md:row-span-1" },
-    { id: 4, src: "/gallery4.jpeg", alt: "Fresh fruits selection nutrition guide", title: "Seasonal Superfoods", desc: "Incorporating native summer foods.", sizeClass: "md:col-span-1 md:row-span-1" },
+    { id: 3, src: "/gallery3.jpeg", alt: "Dt. Poonam Kalia discussing health", title: "Community Education", desc: "Promoting nutrition values locally.", sizeClass: "md:col-span-2 md:row-span-1" },
   ];
 
   return (
