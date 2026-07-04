@@ -3220,19 +3220,23 @@ h1, h2, h3, h4, .btn {
 }
 
 /* ─── Health Popup Modal Custom Styling ─── */
+/* ─── Health Popup Modal Custom Styling ─── */
+@keyframes slideUpFull {
+    from { transform: translateY(100%); }
+    to { transform: translateY(0); }
+}
+
 .health-popup-overlay {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.6);
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--color-bg-warm);
     display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
+    align-items: stretch;
+    justify-content: stretch;
+    padding: 0;
     z-index: 2000;
     opacity: 0;
     animation: fadeIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
@@ -3240,16 +3244,16 @@ h1, h2, h3, h4, .btn {
 
 .health-popup-container {
     position: relative;
-    width: 100%;
-    max-width: 920px;
+    width: 100vw;
+    height: 100vh;
     background-color: var(--color-bg-warm);
-    border-radius: var(--radius-lg);
-    box-shadow: var(--shadow-lg), var(--shadow-glow);
+    border-radius: 0;
+    box-shadow: none;
     overflow: hidden;
     display: flex;
     flex-direction: row;
-    max-height: 90vh;
-    animation: scaleUp 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    max-height: none;
+    animation: slideUpFull 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
 @media (max-width: 768px) {
@@ -3260,45 +3264,54 @@ h1, h2, h3, h4, .btn {
 }
 
 .health-popup-close {
-    position: absolute;
-    top: 16px;
-    right: 16px;
-    width: 36px;
-    height: 36px;
+    position: fixed;
+    top: 24px;
+    right: 24px;
+    width: 44px;
+    height: 44px;
     border-radius: var(--radius-round);
-    background-color: #ffffff;
+    background-color: rgba(255, 255, 255, 0.95);
     color: var(--color-neutral-dark);
     border: none;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1.5rem;
+    font-size: 1.75rem;
     font-weight: 700;
     cursor: pointer;
-    box-shadow: var(--shadow-sm);
+    box-shadow: var(--shadow-md);
     transition: var(--transition-fast);
-    z-index: 10;
+    z-index: 2100;
 }
 
 .health-popup-close:hover {
-    background-color: var(--color-neutral-light);
-    color: var(--color-primary);
-    transform: scale(1.05);
+    background-color: var(--color-primary);
+    color: #ffffff;
+    transform: scale(1.05) rotate(90deg);
 }
 
 .health-popup-left {
-    flex: 1.25;
-    padding: 40px;
+    flex: 1.3;
+    padding: 60px 80px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: center;
     background: linear-gradient(135deg, #ffffff 0%, #f4f7f4 100%);
     box-sizing: border-box;
+    overflow-y: auto;
+}
+
+@media (max-width: 1024px) {
+    .health-popup-left {
+        padding: 40px;
+    }
 }
 
 @media (max-width: 768px) {
     .health-popup-left {
-        padding: 32px 24px;
+        padding: 60px 24px 30px;
+        overflow-y: visible;
+        flex: none;
     }
 }
 
@@ -3313,29 +3326,30 @@ h1, h2, h3, h4, .btn {
     text-transform: uppercase;
     padding: 6px 14px;
     border-radius: 50px;
-    margin-bottom: 20px;
+    margin-bottom: 24px;
 }
 
 .health-popup-title {
-    font-size: 2.25rem;
+    font-size: 2.75rem;
     font-weight: 800;
     color: var(--color-primary);
-    line-height: 1.2;
-    margin-bottom: 12px;
+    line-height: 1.15;
+    margin-bottom: 16px;
+    letter-spacing: -0.5px;
 }
 
 @media (max-width: 575px) {
     .health-popup-title {
-        font-size: 1.75rem;
+        font-size: 2rem;
     }
 }
 
 .health-popup-desc {
     color: var(--color-neutral-dark);
     opacity: 0.85;
-    font-size: 1rem;
-    margin-bottom: 24px;
-    line-height: 1.5;
+    font-size: 1.1rem;
+    margin-bottom: 32px;
+    line-height: 1.6;
 }
 
 .health-popup-desc strong {
@@ -3347,15 +3361,15 @@ h1, h2, h3, h4, .btn {
     background-color: #e9f5ed;
     border: 1px solid #b7e4c7;
     border-radius: var(--radius-md);
-    padding: 20px;
-    margin-bottom: 28px;
+    padding: 24px;
+    margin-bottom: 32px;
 }
 
 .health-popup-offer-title {
-    font-size: 1.1rem;
+    font-size: 1.25rem;
     font-weight: 700;
     color: var(--color-primary);
-    margin-bottom: 14px;
+    margin-bottom: 16px;
     display: flex;
     align-items: center;
     gap: 8px;
@@ -3367,19 +3381,19 @@ h1, h2, h3, h4, .btn {
     margin: 0;
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 16px;
 }
 
 .health-popup-list-item {
     display: flex;
     align-items: flex-start;
-    gap: 12px;
+    gap: 14px;
 }
 
 .health-popup-list-icon {
     color: var(--color-primary-light);
     font-weight: bold;
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     line-height: 1;
     margin-top: 2px;
 }
@@ -3387,33 +3401,33 @@ h1, h2, h3, h4, .btn {
 .health-popup-list-title {
     font-weight: 700;
     color: var(--color-primary-dark);
-    font-size: 0.95rem;
+    font-size: 1.05rem;
     line-height: 1.3;
 }
 
 .health-popup-list-desc {
-    font-size: 0.85rem;
+    font-size: 0.9rem;
     color: var(--color-neutral-muted);
-    margin-top: 2px;
+    margin-top: 3px;
 }
 
 .health-popup-footer {
     display: flex;
     align-items: center;
-    gap: 14px;
+    gap: 16px;
     border-top: 1px solid rgba(0,0,0,0.08);
-    padding-top: 20px;
+    padding-top: 24px;
     margin-top: auto;
 }
 
 .health-popup-avatar {
-    width: 44px;
-    height: 44px;
+    width: 48px;
+    height: 48px;
     border-radius: var(--radius-round);
     background-color: var(--color-primary);
     color: #ffffff;
     font-weight: 700;
-    font-size: 0.95rem;
+    font-size: 1rem;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -3423,21 +3437,21 @@ h1, h2, h3, h4, .btn {
 .health-popup-author-name {
     font-weight: 700;
     color: var(--color-primary-dark);
-    font-size: 0.95rem;
+    font-size: 1.05rem;
     line-height: 1.2;
 }
 
 .health-popup-author-title {
-    font-size: 0.75rem;
+    font-size: 0.8rem;
     color: var(--color-neutral-muted);
     margin-top: 2px;
 }
 
 .health-popup-right {
-    width: 38%;
+    width: 35%;
     background-color: var(--color-primary);
     color: #ffffff;
-    padding: 40px 30px;
+    padding: 60px 40px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -3445,29 +3459,38 @@ h1, h2, h3, h4, .btn {
     text-align: center;
     position: relative;
     box-sizing: border-box;
+    overflow-y: auto;
+}
+
+@media (max-width: 1024px) {
+    .health-popup-right {
+        padding: 40px 30px;
+    }
 }
 
 @media (max-width: 768px) {
     .health-popup-right {
         width: 100%;
-        padding: 32px 24px;
+        padding: 40px 24px;
+        overflow-y: visible;
+        flex: none;
     }
 }
 
 .health-popup-right-badge {
     color: #ffd166;
-    font-size: 0.75rem;
+    font-size: 0.8rem;
     font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 1px;
-    margin-bottom: 8px;
+    letter-spacing: 1.2px;
+    margin-bottom: 12px;
 }
 
 .health-popup-right-title {
-    font-size: 1.35rem;
-    font-weight: 400;
+    font-size: 1.6rem;
+    font-weight: 300;
     color: #ffffff;
-    margin-bottom: 24px;
+    margin-bottom: 32px;
     line-height: 1.4;
 }
 
@@ -3481,8 +3504,8 @@ h1, h2, h3, h4, .btn {
     background-color: rgba(45, 106, 79, 0.4);
     border: 1px solid rgba(255, 255, 255, 0.15);
     border-radius: var(--radius-sm);
-    padding: 14px 16px;
-    margin-bottom: 16px;
+    padding: 16px 20px;
+    margin-bottom: 20px;
     text-align: left;
     box-sizing: border-box;
 }
@@ -3490,8 +3513,8 @@ h1, h2, h3, h4, .btn {
 .health-popup-box-title {
     font-weight: 700;
     color: #b7e4c7;
-    font-size: 0.85rem;
-    margin-bottom: 6px;
+    font-size: 0.9rem;
+    margin-bottom: 8px;
     display: flex;
     align-items: center;
     gap: 6px;
@@ -3500,31 +3523,31 @@ h1, h2, h3, h4, .btn {
 }
 
 .health-popup-box-text {
-    font-size: 0.9rem;
+    font-size: 1rem;
     color: #ffffff;
-    font-weight: 500;
+    font-weight: 600;
     line-height: 1.4;
 }
 
 .health-popup-box-subtext {
-    font-size: 0.75rem;
+    font-size: 0.8rem;
     color: #d8f3dc;
-    margin-top: 4px;
+    margin-top: 6px;
 }
 
 .health-popup-whatsapp-btn {
     width: 100%;
-    padding: 16px 20px;
+    padding: 18px 24px;
     background-color: var(--color-whatsapp);
     color: #ffffff;
     font-weight: 700;
-    font-size: 1rem;
+    font-size: 1.05rem;
     border-radius: var(--radius-sm);
     display: inline-flex;
     align-items: center;
     justify-content: center;
     gap: 10px;
-    margin-top: 10px;
+    margin-top: 14px;
     box-shadow: 0 4px 14px rgba(37, 211, 102, 0.4);
     transition: var(--transition-smooth);
     border: none;
@@ -3540,15 +3563,15 @@ h1, h2, h3, h4, .btn {
 }
 
 .health-popup-whatsapp-icon {
-    width: 20px;
-    height: 20px;
+    width: 22px;
+    height: 22px;
     fill: currentColor;
 }
 
 .health-popup-footnote {
-    font-size: 0.7rem;
+    font-size: 0.75rem;
     color: #d8f3dc;
-    margin-top: 14px;
+    margin-top: 16px;
     opacity: 0.8;
 }
 
