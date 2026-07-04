@@ -7,7 +7,8 @@ export default function HealthPopup() {
 
   useEffect(() => {
     // Check if the user has already dismissed the popup in this session
-    const hasSeenPopup = sessionStorage.getItem("hasSeenHealthPopup");
+    // (Temporarily bypassed to 'false' so you can see it on every refresh for previewing)
+    const hasSeenPopup = false; // sessionStorage.getItem("hasSeenHealthPopup");
     
     if (!hasSeenPopup) {
       // Auto-open the popup after 2.5 seconds
@@ -21,8 +22,8 @@ export default function HealthPopup() {
 
   const closePopup = () => {
     setIsOpen(false);
-    // Don't show it again during the same browser session
-    sessionStorage.setItem("hasSeenHealthPopup", "true");
+    // Don't show it again during the same browser session (Temporarily bypassed)
+    // sessionStorage.setItem("hasSeenHealthPopup", "true");
   };
 
   if (!isOpen) return null;
