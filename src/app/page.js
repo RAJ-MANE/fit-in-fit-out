@@ -18,6 +18,7 @@ import CtaBanner from "@/components/CtaBanner";
 import Footer from "@/components/Footer";
 import FloatingCta from "@/components/FloatingCta";
 import PromoPopup from "@/components/PromoPopup";
+import HealthPopup from "@/components/HealthPopup";
 import VideoModal from "@/components/VideoModal";
 import ImageLightbox from "@/components/ImageLightbox";
 
@@ -68,6 +69,9 @@ export default function Home() {
 
       {/* Periodic Consult Promo Popup */}
       <PromoPopup />
+
+      {/* Limited Period Offer Health Popup */}
+      <HealthPopup />
 
       {/* Dynamic YouTube Video Modal */}
       <VideoModal videoId={selectedVideoId} onClose={handleCloseModal} />
