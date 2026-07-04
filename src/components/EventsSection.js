@@ -8,29 +8,29 @@ export default function EventsSection() {
     {
       id: 1,
       src: "/event1.jpeg",
-      alt: "Corporate Wellness Seminar by Dt. Poonam Kalia",
-      title: "Corporate Health & Wellness Seminars",
+      alt: "Nutrition lecture hosted by INHS Asvini for Indian Navy personnel",
+      title: "INHS Asvini Nutrition Seminars",
       date: "October 2025",
-      desc: "Delivering expert nutrition guides, metabolic hacks, and stress management counseling for corporate employees at multinational firms.",
-      bullets: ["Stress-eating recovery guides", "Desk-job metabolic activation plans", "Healthy cafeteria choices guidelines"]
+      desc: "Prioritizing health and wellness is essential for a high-performing community. The special lecture on nutrition hosted by #INHSAsvini for #IndianNavy personnel and their families is a commendable initiative to foster a healthy lifestyle.",
+      bullets: ["Navy personnel meal planning guidance", "Family nutrition & dietary wellness", "Fostering active military lifestyles"]
     },
     {
       id: 2,
       src: "/event2.jpeg",
-      alt: "Thyroid & PCOS Awareness Panel Discussion",
-      title: "Hormonal Health & PCOS Seminars",
+      alt: "Clinical Dietitian Poonam Kalia lecturing on World Obesity Day",
+      title: "World Obesity Day Defense Seminars",
       date: "December 2025",
-      desc: "An educational interactive panel dedicated to addressing thyroid function, insulin resistance, and dietary protocols for balancing female hormones.",
-      bullets: ["Scientific lifestyle modifications", "Targeted micro-nutrient foods", "Actionable thyroid-supporting rules"]
+      desc: "Prioritizing health and fitness is vital for our defense personnel. The insightful lecture conducted by Clinical Dietitian Poonam Kalia on #WorldObesityDay serves as a commendable initiative in promoting a healthier lifestyle.",
+      bullets: ["Defense personnel fitness protocols", "Evidence-based weight management", "Active daily lifestyle choices"]
     },
     {
       id: 3,
       src: "/event3.jpeg",
-      alt: "Community Nutrition Camp at ठाकुर Village",
-      title: "Community Outreach & Free Health Camps",
+      alt: "Lifestyle disease informative lecture for defense civilians",
+      title: "Lifestyle Disease Prevention for Defense Civilians",
       date: "February 2026",
-      desc: "Organizing free health screenings, BMI calculations, and custom dietary guidelines for local communities and under-privileged residents.",
-      bullets: ["Free body composition analysis", "Localized seasonal food guidance", "Preventative clinical nutrition checks"]
+      desc: "Education plays a critical role in proactive healthcare. The informative lecture on lifestyle diseases and healthy habits conducted by Dietitian Mrs. Poonam Kalia for defense civilians is an excellent initiative to promote long-term well-being.",
+      bullets: ["Proactive healthcare education", "Preventative clinical nutrition checks", "Long-term habits for chronic disease prevention"]
     }
   ];
 
