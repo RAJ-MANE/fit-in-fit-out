@@ -79,7 +79,7 @@ function EventCard({ event, isReversed }) {
       const distanceFromCenter = elementCenter - viewportCenter;
       
       // Map the distance to a subtle parallax vertical scroll shift (max +/- 35px)
-      const maxShift = 35;
+      const maxShift = 10;
       const shift = (distanceFromCenter / windowHeight) * -maxShift;
       
       setOffsetY(shift);
@@ -105,10 +105,10 @@ function EventCard({ event, isReversed }) {
           <div className="shimmer-effect" aria-hidden="true" />
           
           <div
-            className="absolute inset-0 w-full h-[120%] transition-transform duration-100 ease-out"
+            className="absolute inset-0 w-full h-[106%] transition-transform duration-100 ease-out"
             style={{
               transform: `translateY(${offsetY}px)`,
-              top: "-10%"
+              top: "-3%"
             }}
           >
             <Image
@@ -116,7 +116,7 @@ function EventCard({ event, isReversed }) {
               alt={event.alt}
               fill
               sizes="(max-width: 768px) 100vw, 50vw"
-              className="object-cover scale-105"
+              className="object-cover"
             />
           </div>
         </div>
