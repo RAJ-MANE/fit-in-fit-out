@@ -28,6 +28,26 @@ export default function WhyChooseSection() {
 
   const testimonials = [
     {
+      text: "I can't thank you enough Poonam! I introduced my son to you at 103 kgs, and today he is 10 kgs down with your guidance! What is most amazing is that it was done in a healthy manner. I thank you not only for your guidance but the change you have got in lifestyle and habits!",
+      name: "Parent of Teen Client",
+      location: "Mumbai",
+    },
+    {
+      text: "Poonam is one of the best dietitians. My mother's sugar levels were a major concern post-COVID and we were worried. Poonam not only helped us get her sugar levels on track but also provided comfort to my mother and our family with periodic follow-ups and comforting conversations. I highly recommend her!",
+      name: "Family of Diabetic Patient",
+      location: "Mumbai",
+    },
+    {
+      text: "Heartiest Congratulations Ma'am! You are a role model for me when it comes to good and healthy food. You changed the way we think of 'DIET' and get paranoid with the thought of it. You made it so simple and manageable!",
+      name: "Dedicated Wellness Client",
+      location: "India",
+    },
+    {
+      text: "Diagnosed with Grade 2 fatty liver and elevated liver parameters. Within almost 2 months of structured clinical nutrition and guided lifestyle correction, my liver enzyme levels returned to normal, fatty liver grading improved, and overall energy has returned!",
+      name: "Fatty Liver Reversal Story (42y Male)",
+      location: "Metabolic Care Study",
+    },
+    {
       text: "Professional guidance that helped me manage my diabetes and improve my overall health. The personalized diet plans were incredibly easy to incorporate into my busy Mumbai work schedule.",
       name: "Rajiv Shah",
       location: "Kandivali East",
