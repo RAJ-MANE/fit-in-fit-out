@@ -3468,8 +3468,8 @@ h1, h2, h3, h4, .btn {
 /* ─── Health Popup Modal Custom Styling ─── */
 /* ─── Health Popup Modal Custom Styling ─── */
 @keyframes slideUpFull {
-    from { transform: translateY(100%); }
-    to { transform: translateY(0); }
+    from { transform: translateY(100%); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
 }
 
 .health-popup-overlay {
@@ -3525,6 +3525,7 @@ h1, h2, h3, h4, .btn {
         height: 100vh;
         max-height: 100vh;
         transform: none;
+        opacity: 1;
         flex-direction: column;
         overflow-y: auto;
         animation: slideUpFull 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
