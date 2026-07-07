@@ -1,6 +1,7 @@
 import { Inter, Outfit } from "next/font/google";
 import "./globals.css";
 import GrainOverlay from "@/components/GrainOverlay";
+import { Analytics } from "@vercel/analytics/next";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -156,6 +157,7 @@ export default function RootLayout({ children }) {
       <body className="min-h-full flex flex-col">
         <GrainOverlay />
         {children}
+        <Analytics />
       </body>
     </html>
   );
