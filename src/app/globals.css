@@ -3525,6 +3525,8 @@ h1, h2, h3, h4, .btn {
         height: 100vh;
         max-height: 100vh;
         transform: none;
+        flex-direction: column;
+        overflow-y: auto;
         animation: slideUpFull 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
     }
 }
