@@ -16,33 +16,44 @@ export default function AssessmentSection() {
       const bmi = parseFloat((w / ((h / 100) ** 2)).toFixed(1));
       let status = "";
       let statusClass = "";
+      let rangeText = "";
+      let pointerLeft = "0%";
       let advice = "";
 
       if (bmi < 18.5) {
         status = "Underweight";
         statusClass = "underweight";
-        advice = "Your body weight is below the normal range. It is recommended to consult Dt. Poonam Kalia for a healthy, structured weight gain plan focused on balanced nutrients and protein.";
+        rangeText = "Underweight Range (BMI < 18.5)";
+        pointerLeft = "12.5%";
+        advice = "Your weight status is below the recommended healthy range. A structured, nutrient-dense nutrition strategy is key to recovering healthy muscle mass and building metabolic resilience.";
       } else if (bmi >= 18.5 && bmi < 25) {
         status = "Healthy Weight";
         statusClass = "healthy";
-        advice = "Your body weight is in the ideal range. Maintaining a balanced diet and regular physical activity will sustain this health score.";
+        rangeText = "Healthy Weight Range (BMI 18.5 – 24.9)";
+        pointerLeft = "37.5%";
+        advice = "Fantastic! Your weight category is in the ideal range. Keeping up with a balanced, functional diet and matching lifestyle habits will maintain this excellent score.";
       } else if (bmi >= 25 && bmi < 30) {
         status = "Overweight";
         statusClass = "overweight";
-        advice = "Your body weight is slightly above the healthy range. A structured, evidence-based nutrition plan can assist in restoring balance and preventing long-term metabolic risks.";
+        rangeText = "Overweight Range (BMI 25 – 29.9)";
+        pointerLeft = "62.5%";
+        advice = "Your weight status falls slightly above the healthy range. Customizing your clinical nutrition and lifestyle can help align your body composition and prevent long-term metabolic risks.";
       } else {
         status = "Obese";
         statusClass = "obese";
-        advice = "Your body weight is in the obese range. We recommend booking a comprehensive clinical consultation with Dt. Poonam Kalia to address cellular metabolism and design a sustainable recovery plan.";
+        rangeText = "Obese Range (BMI ≥ 30)";
+        pointerLeft = "87.5%";
+        advice = "Your weight category falls in the obese range, which can impact hormones, joint health, and energy. A professional, clinically supervised strategy is recommended to restore cellular vitality.";
       }
 
-      const whatsappText = `Hello Dt. Poonam, my BMI is ${bmi} (${status}) and I want to book a nutrition counseling session.`;
+      const whatsappText = `Hello Dt. Poonam, I checked my weight status on the BMI calculator and it shows I am in the ${status} Range. I would like to book a free consultation to get my exact body composition analysis and custom report.`;
       const whatsappUrl = `https://wa.me/919920659600?text=${encodeURIComponent(whatsappText)}`;
 
       setResult({
-        score: bmi,
         status,
         statusClass,
+        rangeText,
+        pointerLeft,
         advice,
         whatsappUrl,
       });
@@ -135,27 +146,55 @@ export default function AssessmentSection() {
             </form>
 
             {result && (
-              <div id="bmi-result" className="bmi-result">
-                <div className="bmi-score-box glass-panel">
-                  <span className="score-label">Your BMI</span>
-                  <span className="score-value" id="bmi-val">
-                    {result.score}
-                  </span>
+              <div id="bmi-result" className="bmi-result mt-6">
+                {/* Horizontal Range Meter */}
+                <div className="bmi-meter-container">
+                  <div 
+                    className="bmi-meter-pointer animate-bounce" 
+                    style={{ left: result.pointerLeft }}
+                  >
+                    <span className="pointer-icon">▼</span>
+                  </div>
+                  <div className="bmi-meter-track">
+                    <div className="bmi-meter-segment underweight"></div>
+                    <div className="bmi-meter-segment healthy"></div>
+                    <div className="bmi-meter-segment overweight"></div>
+                    <div className="bmi-meter-segment obese"></div>
+                  </div>
+                  <div className="bmi-meter-labels">
+                    <span>Underweight</span>
+                    <span>Normal</span>
+                    <span>Overweight</span>
+                    <span>Obese</span>
+                  </div>
                 </div>
-                <div className={`bmi-status ${result.statusClass}`} id="bmi-status">
-                  {result.status}
+
+                <div className={`bmi-status ${result.statusClass}`} id="bmi-status" style={{ fontSize: "1.1rem", padding: "10px 16px", borderRadius: "12px", fontWeight: "700", textAlign: "center", textTransform: "uppercase", letterSpacing: "0.5px" }}>
+                  {result.rangeText}
                 </div>
-                <p className="bmi-advice" id="bmi-advice">
+                
+                <p className="bmi-advice mt-4 text-neutral-600 text-sm" id="bmi-advice" style={{ lineHeight: "1.6" }}>
                   {result.advice}
                 </p>
+
+                {/* Locked Teaser */}
+                <div className="bmi-locked-overlay">
+                  <div className="lock-icon-box">🔒</div>
+                  <div className="locked-text-box">
+                    <h4>Exact Decimal Score Locked</h4>
+                    <p>Get your exact BMI decimal, body fat percentage, and a customized 7-day nutrition roadmap from Dt. Poonam Kalia.</p>
+                  </div>
+                </div>
+
                 <a
                   href={result.whatsappUrl}
                   id="bmi-cta"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="btn btn-accent btn-block"
+                  className="btn btn-accent btn-block mt-4"
+                  style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: "8px", fontWeight: "700" }}
                 >
-                  Book Personalized Consultation
+                  <span>Unlock My Exact Score & Diet Report (Free)</span>
                 </a>
               </div>
             )}
