@@ -8,10 +8,10 @@ export default function HealthPopup({ introActive }) {
   useEffect(() => {
     if (introActive) return;
 
-    // Auto-open the popup 30 seconds after the intro loader completes
+    // Auto-open the popup 3 seconds after the intro loader completes
     const timer = setTimeout(() => {
       setIsOpen(true);
-    }, 30000);
+    }, 3000);
 
     return () => clearTimeout(timer);
   }, [introActive]);

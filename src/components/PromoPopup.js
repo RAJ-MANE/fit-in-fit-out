@@ -16,11 +16,11 @@ export default function PromoPopup() {
   const [currentIdx, setCurrentIdx] = useState(0);
 
   useEffect(() => {
-    // Initial delay: show the first popup after 10 seconds
+    // Initial delay: show the first popup after 30 seconds
     const initialTimer = setTimeout(() => {
       setCurrentIdx(Math.floor(Math.random() * PROMO_MESSAGES.length));
       setActive(true);
-    }, 10000);
+    }, 30000);
 
     // Main interval: trigger a popup every 2 minutes (120000 ms)
     const intervalTimer = setInterval(() => {
