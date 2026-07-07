@@ -3517,6 +3517,9 @@ h1, h2, h3, h4, .btn {
         padding: 0;
         align-items: stretch;
         justify-content: stretch;
+        backdrop-filter: none !important;
+        -webkit-backdrop-filter: none !important;
+        background-color: rgba(8, 28, 21, 0.85);
     }
 
     .health-popup-container {
@@ -3529,6 +3532,14 @@ h1, h2, h3, h4, .btn {
         flex-direction: column;
         overflow-y: auto;
         animation: slideUpFull 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+
+    .health-popup-badge {
+        animation: fadeInUpStagger 0.5s ease forwards 0.3s !important;
+    }
+
+    .health-popup-whatsapp-btn {
+        animation: fadeInUpStagger 0.5s ease forwards 0.9s !important;
     }
 }
 
