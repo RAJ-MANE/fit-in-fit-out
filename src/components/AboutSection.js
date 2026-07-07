@@ -14,6 +14,15 @@ export default function AboutSection() {
     { icon: "🌱", label: "Lifestyle Modification" },
   ];
 
+  const qualifications = [
+    { icon: "🎓", label: "MSc in Food and Nutrition" },
+    { icon: "🌿", label: "Ayurveda Nutrition Expert" },
+    { icon: "🛡️", label: "Advanced Onco Nutrition Expert" },
+    { icon: "🩸", label: "Certified Diabetes Educator (CDE)" },
+    { icon: "🤝", label: "Geriatric Nutrition Expert" },
+    { icon: "🏃‍♀️", label: "Marathon Runner" },
+  ];
+
   return (
     <section className="about section-padding" id="about" style={{ overflow: "hidden" }}>
       {/* Botanical Background Decoration */}
@@ -56,6 +65,16 @@ export default function AboutSection() {
               With extensive experience in clinical environments, including prestigious institutions like INHS Asvini Hospital, Dt. Poonam Kalia approaches wellness from a functional, medical, and sustainable lens, helping you achieve a healthier lifestyle without restrictive dieting.
             </p>
             
+            <h3 className="qualifications-heading">Qualifications & Certifications</h3>
+            <div className="qualifications-list">
+              {qualifications.map((qual, index) => (
+                <div key={index} className="qualification-item" style={{ transitionDelay: `${index * 40}ms` }}>
+                  <span className="qualification-icon">{qual.icon}</span>
+                  <span className="qualification-label">{qual.label}</span>
+                </div>
+              ))}
+            </div>
+
             <h3 className="expertise-heading">Areas of Expertise</h3>
             <div className="expertise-tags">
               {expertiseTags.map((tag, index) => (

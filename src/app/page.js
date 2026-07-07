@@ -11,6 +11,7 @@ import AssessmentSection from "@/components/AssessmentSection";
 import ConsultationSection from "@/components/ConsultationSection";
 import WellnessSection from "@/components/WellnessSection";
 import WhyChooseSection from "@/components/WhyChooseSection";
+import BeforeAfterSlider from "@/components/BeforeAfterSlider";
 import GalleryBento from "@/components/GalleryBento";
 import PodcastsSection from "@/components/PodcastsSection";
 import EventsSection from "@/components/EventsSection";
@@ -57,6 +58,7 @@ export default function Home() {
         <ConsultationSection />
         <WellnessSection />
         <WhyChooseSection />
+        <BeforeAfterSlider />
         <GalleryBento onPreview={setPreviewImage} />
         <PodcastsSection onVideoSelect={handleVideoSelect} />
         <EventsSection />

@@ -936,6 +936,252 @@ h1, h2, h3, h4 {
     }
 }
 
+/* --- About Qualifications --- */
+.qualifications-heading {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--color-primary);
+    margin-top: 32px;
+    margin-bottom: 16px;
+    font-family: var(--font-heading);
+}
+
+.qualifications-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 12px;
+    margin-bottom: 36px;
+}
+
+.qualification-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 16px;
+    background-color: var(--color-bg-white);
+    border-radius: var(--radius-md);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+    border: 1px solid var(--color-neutral-light);
+    transition: var(--transition-smooth);
+    opacity: 0;
+    animation: zoomInSpring 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+.reveal-active .qualification-item {
+    opacity: 1;
+}
+
+.qualification-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+    border-color: var(--color-accent-light);
+    background-color: var(--color-accent-light);
+}
+
+.qualification-icon {
+    font-size: 1.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    background-color: var(--color-bg-warm);
+    border-radius: 50%;
+}
+
+.qualification-label {
+    font-size: 0.925rem;
+    font-weight: 600;
+    color: var(--color-primary);
+}
+
+/* --- Before & After Slider Section --- */
+.before-after-section {
+    position: relative;
+    z-index: 1;
+}
+
+.bg-warm-light {
+    background-color: #faf8f4;
+}
+
+.before-after-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.client-tabs-container {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.client-tab-btn {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 16px 24px;
+    background: var(--color-bg-white);
+    border: 1px solid var(--color-neutral-light);
+    border-radius: var(--radius-lg);
+    text-align: left;
+    cursor: pointer;
+    transition: var(--transition-smooth);
+    box-shadow: var(--shadow-sm);
+}
+
+.client-tab-btn:hover {
+    border-color: var(--color-primary-light);
+    transform: translateX(4px);
+}
+
+.client-tab-btn.active {
+    border-color: var(--color-primary);
+    background-color: var(--color-accent-light);
+    box-shadow: var(--shadow-md);
+    transform: translateX(8px);
+}
+
+.tab-number {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--color-accent);
+    opacity: 0.8;
+}
+
+.client-tab-btn.active .tab-number {
+    color: var(--color-primary);
+}
+
+.tab-text-wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+.tab-title {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 1.05rem;
+    color: var(--color-primary);
+}
+
+.tab-subtitle {
+    font-size: 0.825rem;
+    color: var(--color-neutral-muted);
+}
+
+.client-story-card {
+    padding: 24px;
+    border-radius: var(--radius-lg);
+}
+
+.story-badge {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--color-accent);
+    margin-bottom: 8px;
+}
+
+.story-title {
+    font-family: var(--font-heading);
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: var(--color-primary);
+    margin-bottom: 12px;
+}
+
+.story-desc {
+    font-size: 0.95rem;
+    color: var(--color-neutral-dark);
+    line-height: 1.6;
+}
+
+.story-highlights {
+    display: flex;
+    gap: 20px;
+}
+
+.highlight-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.hl-icon {
+    font-size: 1.1rem;
+}
+
+.hl-text {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--color-primary);
+}
+
+/* Image Slider styles */
+.slider-wrapper {
+    position: relative;
+    user-select: none;
+}
+
+.slider-instruction {
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+
+/* Make range slider overlay take entire space and customize cursor */
+.slider-wrapper input[type="range"] {
+    -webkit-appearance: none;
+    appearance: none;
+    background: transparent;
+}
+
+.slider-wrapper input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    cursor: ew-resize;
+}
+
+.slider-wrapper input[type="range"]::-moz-range-thumb {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    cursor: ew-resize;
+    background: transparent;
+    border: none;
+}
+
+@media (max-width: 991px) {
+    .before-after-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    
+    .before-after-info-col {
+        order: 2;
+    }
+    
+    .before-after-viewer-col {
+        order: 1;
+    }
+    
+    .client-tab-btn.active {
+        transform: none;
+    }
+    
+    .client-tab-btn:hover {
+        transform: none;
+    }
+}
+
 /* --- Services Grid --- */
 .services {
     background-color: var(--color-bg-warm);
@@ -3232,11 +3478,13 @@ h1, h2, h3, h4, .btn {
     left: 0;
     width: 100vw;
     height: 100vh;
-    background-color: var(--color-bg-warm);
+    background-color: rgba(8, 28, 21, 0.45);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
     display: flex;
-    align-items: stretch;
-    justify-content: stretch;
-    padding: 0;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
     z-index: 2000;
     opacity: 0;
     animation: fadeIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
@@ -3244,29 +3492,47 @@ h1, h2, h3, h4, .btn {
 
 .health-popup-container {
     position: relative;
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    max-width: 950px;
+    height: auto;
+    max-height: 90vh;
     background-color: var(--color-bg-warm);
-    border-radius: 0;
-    box-shadow: none;
+    border-radius: 32px;
+    box-shadow: 0 24px 64px rgba(8, 28, 21, 0.15), 0 0 0 1px rgba(255, 255, 255, 0.8) inset;
     overflow: hidden;
     display: flex;
     flex-direction: row;
-    max-height: none;
-    animation: slideUpFull 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    transform: scale(0.95) translateY(20px);
+    opacity: 0;
+    animation: modalReveal 0.65s cubic-bezier(0.34, 1.56, 0.64, 1) forwards 0.1s;
+}
+
+@keyframes modalReveal {
+    0% { transform: scale(0.95) translateY(20px); opacity: 0; }
+    100% { transform: scale(1) translateY(0); opacity: 1; }
 }
 
 @media (max-width: 768px) {
+    .health-popup-overlay {
+        padding: 0;
+        align-items: stretch;
+        justify-content: stretch;
+    }
+
     .health-popup-container {
-        flex-direction: column;
-        overflow-y: auto;
+        border-radius: 0;
+        width: 100vw;
+        height: 100vh;
+        max-height: 100vh;
+        transform: none;
+        animation: slideUpFull 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
     }
 }
 
 .health-popup-close {
-    position: fixed;
-    top: 24px;
-    right: 24px;
+    position: absolute;
+    top: 20px;
+    right: 20px;
     width: 44px;
     height: 44px;
     border-radius: var(--radius-round);
@@ -3280,23 +3546,31 @@ h1, h2, h3, h4, .btn {
     font-weight: 700;
     cursor: pointer;
     box-shadow: var(--shadow-md);
-    transition: var(--transition-fast);
+    transition: var(--transition-smooth);
     z-index: 2100;
 }
 
 .health-popup-close:hover {
-    background-color: var(--color-primary);
+    background-color: var(--color-accent);
     color: #ffffff;
     transform: scale(1.05) rotate(90deg);
 }
 
+@media (max-width: 768px) {
+    .health-popup-close {
+        position: fixed;
+        top: 16px;
+        right: 16px;
+    }
+}
+
 .health-popup-left {
-    flex: 1.3;
+    flex: 1.35;
     padding: 60px 80px;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    background: linear-gradient(135deg, #ffffff 0%, #f4f7f4 100%);
+    background: linear-gradient(135deg, #ffffff 0%, #f7f9f7 100%);
     box-sizing: border-box;
     overflow-y: auto;
 }
@@ -3318,7 +3592,7 @@ h1, h2, h3, h4, .btn {
 .health-popup-badge {
     display: inline-block;
     align-self: flex-start;
-    background-color: var(--color-primary);
+    background-color: var(--color-accent);
     color: #ffffff;
     font-size: 0.75rem;
     font-weight: 700;
@@ -3327,15 +3601,25 @@ h1, h2, h3, h4, .btn {
     padding: 6px 14px;
     border-radius: 50px;
     margin-bottom: 24px;
+    opacity: 0;
+    animation: fadeInUpStagger 0.5s ease forwards 0.3s, pulseGlow 2s infinite 1.2s;
+}
+
+@keyframes pulseGlow {
+    0% { box-shadow: 0 0 0 0 rgba(224, 122, 95, 0.4); }
+    70% { box-shadow: 0 0 0 8px rgba(224, 122, 95, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(224, 122, 95, 0); }
 }
 
 .health-popup-title {
-    font-size: 2.75rem;
+    font-size: 2.5rem;
     font-weight: 800;
     color: var(--color-primary);
     line-height: 1.15;
     margin-bottom: 16px;
     letter-spacing: -0.5px;
+    opacity: 0;
+    animation: fadeInUpStagger 0.5s ease forwards 0.4s;
 }
 
 @media (max-width: 575px) {
@@ -3347,9 +3631,11 @@ h1, h2, h3, h4, .btn {
 .health-popup-desc {
     color: var(--color-neutral-dark);
     opacity: 0.85;
-    font-size: 1.1rem;
-    margin-bottom: 32px;
+    font-size: 1.05rem;
+    margin-bottom: 28px;
     line-height: 1.6;
+    opacity: 0;
+    animation: fadeInUpStagger 0.5s ease forwards 0.5s;
 }
 
 .health-popup-desc strong {
@@ -3360,13 +3646,22 @@ h1, h2, h3, h4, .btn {
 .health-popup-offer-box {
     background-color: #e9f5ed;
     border: 1px solid #b7e4c7;
+    border-left: 4px solid var(--color-primary-light);
     border-radius: var(--radius-md);
     padding: 24px;
     margin-bottom: 32px;
+    opacity: 0;
+    animation: fadeInUpStagger 0.5s ease forwards 0.6s;
+    transition: var(--transition-smooth);
+}
+
+.health-popup-offer-box:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(45, 106, 79, 0.06);
 }
 
 .health-popup-offer-title {
-    font-size: 1.25rem;
+    font-size: 1.2rem;
     font-weight: 700;
     color: var(--color-primary);
     margin-bottom: 16px;
@@ -3388,6 +3683,15 @@ h1, h2, h3, h4, .btn {
     display: flex;
     align-items: flex-start;
     gap: 14px;
+    opacity: 0;
+}
+
+.health-popup-list-item:nth-child(1) {
+    animation: fadeInUpStagger 0.5s ease forwards 0.7s;
+}
+
+.health-popup-list-item:nth-child(2) {
+    animation: fadeInUpStagger 0.5s ease forwards 0.8s;
 }
 
 .health-popup-list-icon {
@@ -3418,6 +3722,8 @@ h1, h2, h3, h4, .btn {
     border-top: 1px solid rgba(0,0,0,0.08);
     padding-top: 24px;
     margin-top: auto;
+    opacity: 0;
+    animation: fadeInUpStagger 0.5s ease forwards 0.9s;
 }
 
 .health-popup-avatar {
@@ -3448,7 +3754,7 @@ h1, h2, h3, h4, .btn {
 }
 
 .health-popup-right {
-    width: 35%;
+    width: 38%;
     background-color: var(--color-primary);
     color: #ffffff;
     padding: 60px 40px;
@@ -3484,14 +3790,18 @@ h1, h2, h3, h4, .btn {
     text-transform: uppercase;
     letter-spacing: 1.2px;
     margin-bottom: 12px;
+    opacity: 0;
+    animation: fadeInUpStagger 0.5s ease forwards 0.5s;
 }
 
 .health-popup-right-title {
-    font-size: 1.6rem;
+    font-size: 1.5rem;
     font-weight: 300;
     color: #ffffff;
-    margin-bottom: 32px;
+    margin-bottom: 28px;
     line-height: 1.4;
+    opacity: 0;
+    animation: fadeInUpStagger 0.5s ease forwards 0.6s;
 }
 
 .health-popup-right-title span {
@@ -3508,6 +3818,15 @@ h1, h2, h3, h4, .btn {
     margin-bottom: 20px;
     text-align: left;
     box-sizing: border-box;
+    opacity: 0;
+}
+
+.health-popup-box:nth-of-type(1) {
+    animation: fadeInUpStagger 0.5s ease forwards 0.7s;
+}
+
+.health-popup-box:nth-of-type(2) {
+    animation: fadeInUpStagger 0.5s ease forwards 0.8s;
 }
 
 .health-popup-box-title {
@@ -3553,12 +3872,20 @@ h1, h2, h3, h4, .btn {
     border: none;
     cursor: pointer;
     text-decoration: none;
+    opacity: 0;
+    animation: fadeInUpStagger 0.5s ease forwards 0.9s, buttonPulse 2.2s infinite 1.8s;
+}
+
+@keyframes buttonPulse {
+    0% { transform: scale(1); box-shadow: 0 4px 14px rgba(37, 211, 102, 0.4); }
+    50% { transform: scale(1.025); box-shadow: 0 8px 24px rgba(37, 211, 102, 0.6); }
+    100% { transform: scale(1); box-shadow: 0 4px 14px rgba(37, 211, 102, 0.4); }
 }
 
 .health-popup-whatsapp-btn:hover {
     background-color: var(--color-whatsapp-hover);
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(37, 211, 102, 0.6);
+    box-shadow: 0 6px 20px rgba(37, 211, 102, 0.5);
     color: #ffffff;
 }
 
@@ -3572,7 +3899,8 @@ h1, h2, h3, h4, .btn {
     font-size: 0.75rem;
     color: #d8f3dc;
     margin-top: 16px;
-    opacity: 0.8;
+    opacity: 0;
+    animation: fadeInUpStagger 0.5s ease forwards 1s;
 }
 
 .health-popup-bg-graphic {
@@ -3584,4 +3912,15 @@ h1, h2, h3, h4, .btn {
     align-items: center;
     justify-content: center;
     z-index: 0;
+}
+
+@keyframes fadeInUpStagger {
+    from {
+        transform: translateY(18px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
 }
