@@ -2,28 +2,22 @@
 
 import React, { useState, useEffect } from "react";
 
-export default function HealthPopup() {
+export default function HealthPopup({ introActive }) {
   const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
-    // Check if the user has already dismissed the popup in this session
-    // (Temporarily bypassed to 'false' so you can see it on every refresh for previewing)
-    const hasSeenPopup = false; // sessionStorage.getItem("hasSeenHealthPopup");
-    
-    if (!hasSeenPopup) {
-      // Auto-open the popup after 2.5 seconds
-      const timer = setTimeout(() => {
-        setIsOpen(true);
-      }, 2500);
+    if (introActive) return;
 
-      return () => clearTimeout(timer);
-    }
-  }, []);
+    // Auto-open the popup 1 second after the intro loader completes
+    const timer = setTimeout(() => {
+      setIsOpen(true);
+    }, 1000);
+
+    return () => clearTimeout(timer);
+  }, [introActive]);
 
   const closePopup = () => {
     setIsOpen(false);
-    // Don't show it again during the same browser session (Temporarily bypassed)
-    // sessionStorage.setItem("hasSeenHealthPopup", "true");
   };
 
   if (!isOpen) return null;

@@ -73,7 +73,7 @@ export default function Home() {
       <PromoPopup />
 
       {/* Limited Period Offer Health Popup */}
-      <HealthPopup />
+      <HealthPopup introActive={introActive} />
 
       {/* Dynamic YouTube Video Modal */}
       <VideoModal videoId={selectedVideoId} onClose={handleCloseModal} />
