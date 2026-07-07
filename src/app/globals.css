@@ -577,6 +577,59 @@ h1, h2, h3, h4 {
     z-index: 10;
 }
 
+.hero-ratings {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-top: 32px;
+    flex-wrap: wrap;
+    position: relative;
+    z-index: 10;
+}
+
+.rating-item {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.rating-stars {
+    color: #ffb000; /* Rich gold color */
+    font-size: 1.1rem;
+    letter-spacing: 2px;
+}
+
+.rating-label {
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--color-neutral-dark);
+}
+
+.rating-divider {
+    width: 1px;
+    height: 32px;
+    background-color: rgba(27, 67, 50, 0.15);
+}
+
+/* mobile responsive layout for ratings */
+@media (max-width: 576px) {
+    .hero-ratings {
+        gap: 12px;
+        justify-content: center;
+        width: 100%;
+    }
+    
+    .rating-divider {
+        display: none;
+    }
+    
+    .rating-item {
+        flex: 1 1 100%;
+        align-items: center;
+        text-align: center;
+    }
+}
+
 .hero-image-container {
     position: relative;
     width: 100%;

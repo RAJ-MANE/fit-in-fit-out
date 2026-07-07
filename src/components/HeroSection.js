@@ -55,6 +55,18 @@ export default function HeroSection() {
               <span>Call +91 9920659600</span>
             </a>
           </div>
+
+          <div className="hero-ratings">
+            <div className="rating-item">
+              <span className="rating-stars">★★★★★</span>
+              <span className="rating-label">5-Star Google Rating</span>
+            </div>
+            <div className="rating-divider"></div>
+            <div className="rating-item">
+              <span className="rating-stars">★★★★★</span>
+              <span className="rating-label">5-Star Justdial Rating</span>
+            </div>
+          </div>
         </div>
 
         <div className="hero-image-container animate-fade-in">
