@@ -3386,7 +3386,7 @@ h1, h2, h3, h4, .btn {
         transform: translateX(0);
     }
     100% {
-        transform: translateX(calc(-280px * 3 - 24px * 3)); /* size + gap of duplicate awards */
+        transform: translateX(calc(-280px * 5 - 24px * 5)); /* size + gap of duplicate awards */
     }
 }
 
@@ -3394,7 +3394,7 @@ h1, h2, h3, h4, .btn {
 @media (max-width: 768px) {
     @keyframes marquee {
         0% { transform: translateX(0); }
-        100% { transform: translateX(calc(-220px * 3 - 24px * 3)); }
+        100% { transform: translateX(calc(-220px * 5 - 24px * 5)); }
     }
 }
 

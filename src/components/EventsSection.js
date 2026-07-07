@@ -18,18 +18,18 @@ export default function EventsSection() {
       id: 2,
       src: "/event2.jpeg",
       alt: "Clinical Dietitian Poonam Kalia lecturing on World Obesity Day",
-      title: "World Obesity Day Defense Seminars",
+      title: "World Obesity Day Defence Seminars",
       date: "December 2025",
-      desc: "Prioritizing health and fitness is vital for our defense personnel. The insightful lecture conducted by Clinical Dietitian Poonam Kalia on #WorldObesityDay serves as a commendable initiative in promoting a healthier lifestyle.",
-      bullets: ["Defense personnel fitness protocols", "Evidence-based weight management", "Active daily lifestyle choices"]
+      desc: "Prioritizing health and fitness is vital for our defence personnel. The insightful lecture conducted by Clinical Dietitian Poonam Kalia on #WorldObesityDay serves as a commendable initiative in promoting a healthier lifestyle.",
+      bullets: ["Defence personnel fitness protocols", "Evidence-based weight management", "Active daily lifestyle choices"]
     },
     {
       id: 3,
       src: "/event3.jpeg",
-      alt: "Lifestyle disease informative lecture for defense civilians",
-      title: "Lifestyle Disease Prevention for Defense Civilians",
+      alt: "Lifestyle disease informative lecture for defence civilians",
+      title: "Lifestyle Disease Prevention for Defence Civilians",
       date: "February 2026",
-      desc: "Education plays a critical role in proactive healthcare. The informative lecture on lifestyle diseases and healthy habits conducted by Dietitian Mrs. Poonam Kalia for defense civilians is an excellent initiative to promote long-term well-being.",
+      desc: "Education plays a critical role in proactive healthcare. The informative lecture on lifestyle diseases and healthy habits conducted by Dietitian Mrs. Poonam Kalia for defence civilians is an excellent initiative to promote long-term well-being.",
       bullets: ["Proactive healthcare education", "Preventative clinical nutrition checks", "Long-term habits for chronic disease prevention"]
     }
   ];

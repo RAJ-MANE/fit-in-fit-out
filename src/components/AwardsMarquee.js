@@ -6,6 +6,8 @@ export default function AwardsMarquee({ onPreview }) {
     { src: "/award1.jpeg", alt: "Certificate of Appreciation - Dt. Poonam Kalia", title: "Certificate of Appreciation" },
     { src: "/award2.jpeg", alt: "Clinical Excellence Award - Dt. Poonam Kalia", title: "Clinical Excellence Award" },
     { src: "/award3.jpeg", alt: "Professional Recognition - Dt. Poonam Kalia", title: "Professional Recognition Award" },
+    { src: "/award4.jpeg", alt: "Specialized Nutrition Certification - Dt. Poonam Kalia", title: "Specialized Nutrition Certification" },
+    { src: "/award5.jpeg", alt: "Professional Dietetics Certification - Dt. Poonam Kalia", title: "Professional Dietetics Certification" },
   ];
 
   // Duplicate awards to create a seamless infinite scrolling effect

@@ -87,7 +87,7 @@ export default function WellnessSection() {
                     <li>
                       <span className="bullet-dot"></span>
                       <span>
-                        <strong>High in Vitamin C:</strong> Elevates immunity levels and cellular defense.
+                        <strong>High in Vitamin C:</strong> Elevates immunity levels and cellular defence.
                       </span>
                     </li>
                     <li>

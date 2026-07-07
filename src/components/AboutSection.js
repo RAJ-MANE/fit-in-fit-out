@@ -7,7 +7,9 @@ export default function AboutSection() {
   const expertiseTags = [
     { icon: "⚖️", label: "Weight Management" },
     { icon: "🩸", label: "Diabetes Care" },
-    { icon: "🏥", label: "Clinical Nutrition" },
+    { icon: "🏥", label: "Clinical Nutrition (Kidney, Liver & Cardiac Disease)" },
+    { icon: "🧪", label: "Tube Feeding (Liquid Diets)" },
+    { icon: "🤝", label: "Geriatric Nutrition (Senior Citizens)" },
     { icon: "🏃‍♀️", label: "Sports Nutrition" },
     { icon: "👩", label: "Women's Health" },
     { icon: "👶", label: "Pediatric Nutrition" },
